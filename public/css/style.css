@@ -1,0 +1,62 @@
+html {}
+body {background: #6C777E;}
+
+#logo{
+    height: 75px;
+    overflow: hidden;
+}
+
+/*
+*	Page Members
+*/
+.page-members{padding-top: 50px;}
+.hho-basic{background-color: #595959;}
+.hho-advance{background-color: #1B1B1B;}
+.db-padding-btm{padding-bottom:50px}
+.db-button-color-square{color:#fff; background-color:rgba(0,0,0,0.50); border:none; border-radius:0px; -webkit-border-radius:0px; -moz-border-radius:0px}
+.db-button-color-square:hover{color: #000; background-color: #fff; }
+.hho-pricing{margin-bottom:30px;  text-align:center; box-shadow:0 0 5px rgba(0,0,0,.5); color:#fff; line-height:30px}
+.hho-pricing ul{list-style:none; margin:0; text-align:center; padding-left:0px}
+.hho-pricing ul li{padding: 10px 0;  cursor:pointer}
+.hho-basic ul li{padding: 27px 0 0 0;}
+.hho-advance ul li{padding: 8px 0 0 0;}
+.hho-pricing ul li i{margin-right:5px}
+.hho-pricing .price{background-color:rgba(0,0,0,0.5); padding: 60px 20px 30px 20px; font-size:60px; font-weight:900; color:#FFF}
+.hho-pricing .price small{color:#B8B8B8; display:block; font-size:12px; margin-top:22px}
+.hho-pricing .price sup{}
+.hho-pricing .price sup:after{content: '';position: absolute;background: #fff;height: 3px;width: 40px;margin-left: -36px;margin-top: 15px;}
+.hho-pricing .type{background-color: #77BB11; padding: 40px 0px; font-weight: 900; text-transform:uppercase; font-size: 28px;}
+.hho-pricing .pricing-footer{padding:20px}
+.db-attached >.col-lg-4, 
+.db-attached >.col-lg-3, 
+.db-attached >.col-md-4, 
+.db-attached >.col-md-3, 
+.db-attached >.col-sm-4, 
+.db-attached >.col-sm-3{padding-left:0; padding-right:0}
+.hho-pricing{margin: 10px 16px;}
+
+
+
+
+/*
+*	Register
+*/
+.page-register{}
+.page-register form{ margin:80px auto;  max-width: 900px;  border-radius:2px}
+.page-register form .tabbable{}
+.page-register form .tabbable .nav{ margin:0;  border:none}
+.page-register form .tabbable .nav li.active a{ background:#fff}
+.page-register form .tabbable .nav li a{ background:#f0f0f0}
+.page-register form .tabbable .tab-content{ background:#fff;  border-radius:3px;  box-shadow: 0 0 25px #000;  min-height:300px;  padding:0 15px}
+.page-register form img{ border:1px solid #BCBCBC;  border-radius:3px;  background-position:center;  background-repeat:no-repeat}
+.page-register form img:hover{ box-shadow:0 0 20px #000; -webkit-transition:all 0.5s ease; -moz-transition:all 0.5s ease; -ms-transition:all 0.5s ease; -o-transition:all 0.5s ease; transition:all 0.5s ease}
+.photobooth ul li {
+  width: 30px;
+  height: 38px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  position: relative;
+  margin-left: -37px;
+  list-style: none;
+}
