@@ -6,6 +6,9 @@ body {background: #6C777E;}
     overflow: hidden;
 }
 
+.clr,.clear{ clear:both; }
+
+
 /*
 *	Page Members
 */
@@ -42,7 +45,7 @@ body {background: #6C777E;}
 *	Register
 */
 .page-register{}
-.page-register form{ margin:80px auto;  max-width: 900px;  border-radius:2px}
+.page-register form{ margin:80px auto;  max-width: 900px;  background: #fafafa; border-radius:2px; padding: 15px;}
 .page-register form .tabbable{}
 .page-register form .tabbable .nav{ margin:0;  border:none}
 .page-register form .tabbable .nav li.active a{ background:#fff}

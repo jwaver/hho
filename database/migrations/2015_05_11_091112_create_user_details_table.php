@@ -11,6 +11,7 @@ class CreateUserDetailsTable extends Migration {
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
 			$table->string('level')->nullable();
+			$table->text('images')->nullable();
 			$table->string('package_type')->nullable();
 			$table->string('referrer_id')->nullable();
 			$table->timestamp('birth_date')->nullable();
