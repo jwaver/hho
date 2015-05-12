@@ -5,14 +5,15 @@
 @endsection
 
 
-
 @section('content')
-<?php if($error) : ?>
-	<div class="alert alert-danger flash" role="alert">ERROR! Change a few things up and try submitting again.</div>
+<?php if(@$error) : ?>
+	<div class="alert alert-danger alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>ERROR!</strong> Change a few things up and try submitting again.
+	</div>
 <?php endif; ?>
 
 <div class="page-register">
-
 	<form class="form-horizontal" id="register" method="post" action="register" enctype="multipart/form-data">
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<input type="hidden" name="packageType" value="{{ key($_GET) }}">
