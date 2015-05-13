@@ -9,6 +9,7 @@
 	
 	<link rel="icon" href="/favicon.ico" type="image/png">
 	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="js/jquery.min.js"></script>
