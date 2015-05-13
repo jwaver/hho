@@ -139,10 +139,13 @@
 				
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right">Permanent Address</label>
-					<div class="col-sm-4">                               
+					<div class="col-sm-8">                               
 						<input class="form-control" type="text" name="contact[permanentAddress]" placeholder="Street, Barangay, City/Province">
 					</div>
-					<label class="col-sm-1 control-label no-padding-right">ZIP</label>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right">ZIP</label>
 					<div class="col-sm-3">                               
 						<input class="form-control" type="text" name="contact[zipCode]" placeholder="Zip Code	">
 					</div>
