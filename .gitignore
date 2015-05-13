@@ -52,3 +52,4 @@ $RECYCLE.BIN/
 *.lnk
 public/.htaccess
 *.htaccess
+public/uploads/

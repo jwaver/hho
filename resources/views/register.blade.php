@@ -6,10 +6,15 @@
 
 
 @section('content')
-<?php if(@$error) : ?>
+<?php if(isset($error) && $error) : ?>
 	<div class="alert alert-danger alert-dismissible" role="alert">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<strong>ERROR!</strong> Change a few things up and try submitting again.
+	</div>
+<?php elseif(isset($error)) : ?>
+	<div class="alert alert-success alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>Success!</strong>
 	</div>
 <?php endif; ?>
 
@@ -139,10 +144,13 @@
 				
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right">Permanent Address</label>
-					<div class="col-sm-4">                               
+					<div class="col-sm-8">                               
 						<input class="form-control" type="text" name="contact[permanentAddress]" placeholder="Street, Barangay, City/Province">
 					</div>
-					<label class="col-sm-1 control-label no-padding-right">ZIP</label>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right">ZIP</label>
 					<div class="col-sm-3">                               
 						<input class="form-control" type="text" name="contact[zipCode]" placeholder="Zip Code	">
 					</div>
