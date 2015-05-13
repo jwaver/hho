@@ -15,9 +15,13 @@ Route::get('/', 'HomeController@index');
 
 Route::get('login', 'HomeController@index');
 
-Route::get('/register', 'RegisterController@index');
+Route::group(['prefix' => 'register'], function(){
+	Route::get('/', 'RegisterController@index');
+	Route::post('/', 'RegisterController@save');
+});
 
-Route::post('/register', 'RegisterController@save');
+Route::get('profile/{id}', 'ProfileController@index');
+
 
 /* 
 Route::group(['before' => 'auth|csrf', function() {
