@@ -49,6 +49,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-public/.htaccess
 *.htaccess
 public/uploads/
+public/.htaccess
