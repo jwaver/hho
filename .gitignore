@@ -1,4 +1,7 @@
 /bootstrap/compiled.php
+/vendor/*
+!/vendor/composer/
+/public/.htaccess
 .env.*.php
 .env.php
 
