@@ -12,39 +12,59 @@ class RegisterController extends Controller {
 	}
 	
 	public function save(){
-		$post = Input::all();
-		
-		try{
-			$id = DB::table('users')->insertGetId(array(
-				'code_id'	=> $post['profileId'],
-				'email'		=> $post['email'],
-				'password'	=> Str::random($length = 16),
-				'first_name'=> $post['firstName'],
-				'last_name'	=> $post['lastName'],
-			));
-			
-			$id = DB::table('user_details')->insertGetId(array(
-				'user_id'		=> $id,
-				'level'			=> "",
-				'package_type'	=> $post['packageType'],
-				'referrer_id'	=> "",
-				'birth_date'	=> $post['birthDate'],
-				'gender'		=> $post['gender'],
-				'marital_status'=> $post['status'],
-				'citizenship'	=> $post['citizenship'],
-				'phone'			=> json_encode(["home"=>$post['contact']['home'],"mobile"=>$post['contact']['mobile']]),
-				'address'		=> json_encode(array("present"=>$post['contact']['presentAddress'], "permanent"=>$post['contact']['permanentAddress'])),
-				'zip'			=> $post['contact']['zipCode'],
-				'vehicle'		=> json_encode($post['vehicle']),
-				'notes'			=> $post['notes'],
-			));
-		}
-		catch(\Illuminate\Database\QueryException $e)
+		$post 			= Input::all();
+		$uploadedAvatar = $this->uploadAvatar();
+
+		if($uploadedAvatar)
 		{
-			return view('register')->with(['generateId'=>$this->generateId(),'error'=>true]);
+			try{
+				$id = DB::table('users')->insertGetId(array(
+					'code_id'	=> $post['profileId'],
+					'username'	=> $post['username'],
+					'email'		=> $post['email'],
+					'password'	=> Str::random($length = 16),
+					'first_name'=> $post['firstName'],
+					'last_name'	=> $post['lastName'],
+				));
+				
+				$id = DB::table('user_details')->insertGetId(array(
+					'user_id'		=> $id,
+					'level'			=> "",
+					'images'		=> $uploadedAvatar,
+					'package_type'	=> $post['packageType'],
+					'referrer_id'	=> "",
+					'birth_date'	=> $post['birthDate'],
+					'gender'		=> $post['gender'],
+					'marital_status'=> $post['status'],
+					'citizenship'	=> $post['citizenship'],
+					'phone'			=> json_encode(["home"=>$post['contact']['home'],"mobile"=>$post['contact']['mobile']]),
+					'address'		=> json_encode(array("present"=>$post['contact']['presentAddress'], "permanent"=>$post['contact']['permanentAddress'])),
+					'zip'			=> $post['contact']['zipCode'],
+					'vehicle'		=> json_encode($post['vehicle']),
+					'notes'			=> $post['notes'],
+				));
+			}
+			catch(\Illuminate\Database\QueryException $e)
+			{
+				return view('register')->with(['generateId'=>$this->generateId(),'error'=>true]);
+			}
 		}
+		return view('register')->with(['generateId'=>$this->generateId(),'error'=>false]);
+	}
 	
-		return view('register')->with(['generateId'=>$this->generateId()]);
+	private function uploadAvatar(){
+		$file = Input::file('avatar');
+		$destinationPath = 'uploads';
+		
+		// If the uploads fail due to file system, you can try doing public_path().'/uploads' 
+		$filename = str_random(12);
+		
+		$upload_status = Input::file('avatar')->move($destinationPath, $filename);
+		
+		if($upload_status)
+		return $filename;
+
+		return $upload_status;
 	}
 	
 	private static function generateId(){
