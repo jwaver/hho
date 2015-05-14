@@ -18,7 +18,7 @@
 					<label class="col-sm-2 control-label no-padding-right">ID</label>
 
 					<div class="col-sm-10">
-						<input class="form-control col-sm-12" type="text" name="profileId" value="{{ $id }}" readonly>
+						<input class="form-control col-sm-12" type="text" readonly>
 					</div>
 				</div>
 				
@@ -26,7 +26,7 @@
 					<label class="col-sm-2 control-label no-padding-right">Username</label>
 
 					<div class="col-sm-10">
-						<input class="form-control col-sm-12" type="text" name="username" placeholder="Username" required>
+						<input class="form-control col-sm-12" type="text" placeholder="Username" value="{{ $username }}" readonly>
 					</div>
 				</div>
 
@@ -185,7 +185,7 @@
 		<br class="clr">
 
 		<div class="clearfix form-actions">
-			<button class="btn btn-primary pull-right" name="register" type="submit">Register</button>
+			<button class="btn btn-primary pull-right" name="register" type="submit">Save Changes</button>
 		</div>
 	</form>
 

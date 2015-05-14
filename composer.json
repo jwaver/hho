@@ -13,12 +13,12 @@
 	},
 	"autoload": {
 		"classmap": [
-			"database"
+			"database",
+			"app/Models"
 		],
 		"psr-4": {
 			"App\\": "app/"
-		},
-		"files": ["app/Http/helpers.php"]
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [

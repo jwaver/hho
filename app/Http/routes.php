@@ -20,7 +20,7 @@ Route::group(['prefix' => 'register'], function(){
 	Route::post('/', 'RegisterController@save');
 });
 
-Route::get('profile/{id}', 'ProfileController@index');
+Route::get('profile/{username}', 'ProfileController@index');
 
 
 /* 
