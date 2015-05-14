@@ -35,4 +35,13 @@ class Users extends Model implements AuthenticatableContract, CanResetPasswordCo
 
 	
 
+	public static function getProfile($username){
+		if(empty($username))
+		return false;
+	
+		$user = Users::where('username',$username)->first()->attributes;
+		
+		return [$user,UserDetails::where('user_id',$user['id'])->first()->attributes];
+	}
+	
 }

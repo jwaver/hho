@@ -1,13 +1,16 @@
 <?php 
 
 namespace App\Http\Controllers;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Users;
 
 class ProfileController extends Controller {
 
 	public function index($username){
-		// dd(Users::all());
-		return view('profile')->with(['username' => $username]);
+		
+		$profile = Users::getProfile($username);
+		
+		return view('profile')->with(['profile' => $profile]);
+		
 	}
 
 }

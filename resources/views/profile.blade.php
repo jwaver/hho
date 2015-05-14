@@ -26,7 +26,7 @@
 					<label class="col-sm-2 control-label no-padding-right">Username</label>
 
 					<div class="col-sm-10">
-						<input class="form-control col-sm-12" type="text" placeholder="Username" value="{{ $username }}" readonly>
+						<input class="form-control col-sm-12" type="text" placeholder="Username" value="" readonly>
 					</div>
 				</div>
 
