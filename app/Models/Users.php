@@ -40,8 +40,9 @@ class Users extends Model implements AuthenticatableContract, CanResetPasswordCo
 		return false;
 	
 		$user = Users::where('username',$username)->first()->attributes;
+		return UserDetails::where('user_id',$user["id"])->first()->attributes;
 		
-		return [$user,UserDetails::where('user_id',$user['id'])->first()->attributes];
+		// return [$user,UserDetails::where('user_id',$user['id'])->first()->attributes];
 	}
 	
 }

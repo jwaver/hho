@@ -4,12 +4,27 @@ namespace App\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Users;
 
 class UserDetails extends Model {
 
-	public static function details($username){
+	/**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'user_details';
+
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [];
 	
-		return Users::where('username',$this->username)->first();
+	public function get(){
+	
+		return $this->belongsTo('Users');
 		
 	}
 }
