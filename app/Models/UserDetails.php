@@ -21,10 +21,10 @@ class UserDetails extends Model {
 	 * @var array
 	 */
 	protected $fillable = [];
+
+	public function details()
+    {
+        return $this->belongsTo('Users');
+    }
 	
-	public function get(){
-	
-		return $this->belongsTo('Users');
-		
-	}
 }

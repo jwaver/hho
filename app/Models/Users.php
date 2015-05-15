@@ -33,16 +33,10 @@ class Users extends Model implements AuthenticatableContract, CanResetPasswordCo
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-	
 
-	public static function getProfile($username){
-		if(empty($username))
-		return false;
-	
-		$user = Users::where('username',$username)->first()->attributes;
-		return UserDetails::where('user_id',$user["id"])->first()->attributes;
-		
-		// return [$user,UserDetails::where('user_id',$user['id'])->first()->attributes];
+	public function details(){
+		return $this->id;
+		return $this->hasOne('App\Models\UserDetails');
 	}
 	
 }
