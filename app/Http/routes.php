@@ -21,7 +21,8 @@ Route::group(['prefix' => 'register'], function(){
 });
 
 Route::group(['prefix' => 'profile'], function(){
-	Route::get('/{username}', 'ProfileController@index');
+	Route::get('/', 'ProfileController@index');
+	Route::get('/{username}', 'ProfileController@profile');
 });
 
 

@@ -109,7 +109,7 @@
 				<input id="profile" name="avatar" type="file" accept="image/x-png, image/gif, image/jpeg, image/jpg" style="display:none;">
 				<b class="col-sm-11 text-center">Profile Picture</b>
 				<label for="profile" style="display: block;text-align: center;">
-				<img for="profile" src="uploads/avatar.png">
+				<img for="profile" src="images/avatar.png">
 				</label>
 				<div class="text-center">
 					<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#camera">Take Camera</button>

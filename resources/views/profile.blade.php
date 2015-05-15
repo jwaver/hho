@@ -101,7 +101,7 @@
 				<input id="profile" name="avatar" type="file" accept="image/x-png, image/gif, image/jpeg, image/jpg" style="display:none;">
 				<b class="col-sm-11 text-center">Profile Picture</b>
 				<label for="profile" style="display: block;text-align: center;">
-				<img for="profile" src="/uploads/{{$profile->images}}" style="max-width: 100%;">
+				<img for="profile" src="{{$profile->images}}" style="max-width: 100%;">
 				</label>
 				<div class="text-center">
 					<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#camera">Take Camera</button>

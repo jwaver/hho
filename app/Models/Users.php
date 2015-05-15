@@ -1,7 +1,7 @@
 <?php 
 
 namespace App\Models;
-
+use DB;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -37,6 +37,30 @@ class Users extends Model implements AuthenticatableContract, CanResetPasswordCo
 	public function details(){
 		return $this->id;
 		return $this->hasOne('App\Models\UserDetails');
+	}
+	
+	public function profile(){
+
+		try
+		{
+			$profile = DB::table('users')
+			->where('username',$this->username)
+			->join('user_details', 'users.id', '=', 'user_details.user_id')
+			->select('*')
+			->first();
+
+			if($profile){
+				$profile->images = $profile->images ? "uploads/".$profile->image : 'images/avatar.png';
+				$profile->phone = json_decode($profile->phone);
+				$profile->address = json_decode($profile->address);
+				$profile->vehicle = json_decode($profile->vehicle);
+			}
+			return $profile;
+		}
+		catch(PDOException $exception)
+		{
+			return false;
+		}
 	}
 	
 }
