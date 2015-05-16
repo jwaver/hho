@@ -36,7 +36,7 @@ class RegisterController extends Controller {
 				'images'		=> $uploadedAvatar,
 				'package_type'	=> $post['packageType'],
 				'referrer_id'	=> "",
-				'birth_date'	=> $post['birthDate'],
+				'birth_date'	=> Date('F d, Y',strtotime(Request::input('birthDate'))),
 				'gender'		=> $post['gender'],
 				'marital_status'=> $post['status'],
 				'citizenship'	=> $post['citizenship'],

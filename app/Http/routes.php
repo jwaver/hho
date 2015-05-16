@@ -23,6 +23,7 @@ Route::group(['prefix' => 'register'], function(){
 Route::group(['prefix' => 'profile'], function(){
 	Route::get('/', 'ProfileController@index');
 	Route::get('/{username}', 'ProfileController@profile');
+	Route::post('/update', 'ProfileController@update');
 });
 
 

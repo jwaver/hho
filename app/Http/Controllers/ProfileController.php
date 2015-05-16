@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use DB;
+use Request;
 use App\Models\Users;
 use App\Models\UserDetails;
 
@@ -21,4 +22,8 @@ class ProfileController extends Controller {
 			return 'Ooops! ';
 	}
 
+	public function update(){
+		dd( Date('F d, Y',strtotime(Request::input('birthDate'))));
+		
+	}
 }
