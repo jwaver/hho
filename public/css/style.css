@@ -51,7 +51,7 @@ body {background: #6C777E;}
 .page-register form .tabbable .nav li.active a{ background:#fff}
 .page-register form .tabbable .nav li a{ background:#f0f0f0}
 .page-register form .tabbable .tab-content{ background:#fff;  border-radius:3px;  box-shadow: 0 0 25px #000;  min-height:300px;  padding:0 15px}
-.page-register form img{ border:1px solid #BCBCBC;  border-radius:3px;  background-position:center;  background-repeat:no-repeat}
+.page-register form img{ border:1px solid #BCBCBC;  border-radius:3px;  background-position:center;  background-repeat:no-repeat; background-size: cover; width: 100%;}
 .page-register form img:hover{ box-shadow:0 0 20px #000; -webkit-transition:all 0.5s ease; -moz-transition:all 0.5s ease; -ms-transition:all 0.5s ease; -o-transition:all 0.5s ease; transition:all 0.5s ease}
 .photobooth ul li {
   width: 30px;
