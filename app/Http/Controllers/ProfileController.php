@@ -13,13 +13,12 @@ class ProfileController extends Controller {
 	}
 	
 	public function profile($username){
-		
-		$profile = Users::where('username','=',$username)->first()->profile();
-		
-		if($profile)
-			return view('profile')->with(['profile' => $profile]);
+		$Users = Users::where('username','=',$username)->first();
+
+		if(!is_null($Users))
+			return view('profile')->with(['profile' => $Users->profile()]);
 		else
-			return 'Ooops! ';
+			abort(404);
 	}
 
 	public function update(){
