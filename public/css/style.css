@@ -1,12 +1,31 @@
-html {}
+html,body,.container {height: 100%;}
 body {background: #6C777E;}
-
+.clr,.clear{ clear:both; }
 #logo{
     height: 75px;
     overflow: hidden;
 }
+.error-404{
+    position: relative;
+    height: 100%;
+    display: block;
+    background: #f0f0f0;
+}
+.error-404 .error-template{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -90px;
+    margin-left: -163px;
+}
+.error-404 h1{
+    font-weight: bold;
+    font-size: 100px;
+    color: #FF4400;
+}
+.error-404 h2{}
+.error-404 .error-details{}
 
-.clr,.clear{ clear:both; }
 
 
 /*

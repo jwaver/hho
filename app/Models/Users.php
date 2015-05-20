@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use DB;
+use DateTime;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -57,4 +58,49 @@ class Users extends Model implements AuthenticatableContract, CanResetPasswordCo
 		}
 	}
 	
+	public static function updateProfile($userId,$post){
+
+		return DB::transaction(function() use($userId,$post) {
+			
+			DB::table('users')
+			->where('id','=',$userId)
+			->update([
+				'email' 	 => $post['email'],
+				// 'password' 	 => $post['password'],
+				'first_name' => $post['firstName'],
+				'last_name'  => $post['lastName'],
+			]);
+			
+			DB::table('user_details')
+			->where('user_id','=',$userId)
+			->update([
+				'images' 		 => '',
+				'birth_date' 	 => \Carbon\Carbon::parse($post['birthDate'])->toDateTimeString(),
+				'gender' 		 => $post['gender'],
+				'marital_status' => $post['status'],
+				'citizenship' 	 => $post['citizenship'],
+				'phone' 		 => json_encode($post['phone']),
+				'address' 		 => json_encode($post['address']),
+				'vehicle' 		 => json_encode($post['vehicle']),
+				'notes' 		 => $post['notes'],
+			]);
+			
+			
+			DB::commit();
+		});
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

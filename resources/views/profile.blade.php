@@ -6,9 +6,11 @@
 
 
 @section('content')
+
 <div class="page-register">
 	<form class="form-horizontal" method="post" action="profile/update" enctype="multipart/form-data">
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+		<input type="hidden" name="username" value="{{$profile->username}}">
 		<input type="hidden" name="dataUri">
 		
 		<h4>Profile</h4>
@@ -53,7 +55,7 @@
 					<label class="col-sm-2 control-label no-padding-right">Birth Date</label>
 					
 					<div class="col-sm-5">                               
-						<input class="form-control datepicker" type="text" name="birthDate" value="{{$profile->birth_date}}">
+						<input class="form-control datepicker" type="text" name="birthDate" value="{{\Carbon\Carbon::parse($profile->birth_date)->format('Y-m-d')}}">
 					</div>
 				</div>
 				
@@ -115,31 +117,31 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right">Phone</label>
 					<div class="col-sm-3">                               
-						<input class="form-control" type="text" name="contact[home]" placeholder="Home Phone#" value="{{$profile->phone->home}}">
+						<input class="form-control" type="text" name="phone[home]" placeholder="Home Phone#" value="{{$profile->phone->home}}">
 					</div>
 					<div class="col-sm-3">                               
-						<input class="form-control" type="text" name="contact[mobile]" placeholder="Mobile #" value="{{$profile->phone->mobile}}">
+						<input class="form-control" type="text" name="phone[mobile]" placeholder="Mobile #" value="{{$profile->phone->mobile}}">
 					</div>
 				</div>
 				
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right">Present Address</label>
 					<div class="col-sm-8">                               
-						<input class="form-control" type="text" name="contact[presentAddress]" placeholder="Street, Barangay, City/Province" value="{{$profile->address->present}}">
+						<input class="form-control" type="text" name="address[presentAddress]" placeholder="Street, Barangay, City/Province" value="{{$profile->address->presentAddress}}">
 					</div>
 				</div>
 				
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right">Permanent Address</label>
 					<div class="col-sm-8">                               
-						<input class="form-control" type="text" name="contact[permanentAddress]" placeholder="Street, Barangay, City/Province" value="{{$profile->address->permanent}}">
+						<input class="form-control" type="text" name="address[permanentAddress]" placeholder="Street, Barangay, City/Province" value="{{$profile->address->permanentAddress}}">
 					</div>
 				</div>
 				
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right">ZIP</label>
 					<div class="col-sm-3">                               
-						<input class="form-control" type="text" name="contact[zipCode]" placeholder="Zip Code" value="{{$profile->zip}}">
+						<input class="form-control" type="text" name="address[zipCode]" placeholder="Zip Code" value="{{$profile->zip}}">
 					</div>
 				</div>
 			</div>

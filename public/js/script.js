@@ -4,6 +4,9 @@
 $(".datepicker").datepicker({
 	autoclose: true,
 	todayHighlight: true,
+	format: 'yyyy-mm-dd',
+	todayBtn: true,
+	setDate: new Date()
 });
 
 $('#profile').imageViewer('img[for=profile]');
