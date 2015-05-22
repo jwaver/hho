@@ -1,5 +1,5 @@
 html,body,.container {height: 100%;}
-body {background: #6C777E;}
+body {background: #FFF4DD;}
 .clr,.clear{ clear:both; }
 #logo{
     height: 75px;
@@ -82,3 +82,13 @@ body {background: #6C777E;}
   margin-left: -37px;
   list-style: none;
 }
+
+
+
+/*
+* Social Icons
+*/
+#socialize{margin: 0 0 40px;}
+#socialize > div{text-align: center;}
+#socialize a{}
+#socialize a i{color: #292D30;}
